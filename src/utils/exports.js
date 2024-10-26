@@ -5,7 +5,10 @@ import ResetPassword from "../appUI/auth/ResetPassword";
 import CreateProfile from "../appUI/auth/CreateProfile";
 import OneTimePin from "../appUI/auth/OneTimePin";
 import ForgotPassword from "../appUI/auth/ForgotPassword";
+
 import Profile from "../appUI/app/topNavigation/Profile";
+import Notifications from "../appUI/app/topNavigation/Notifications";
+import Search from "../appUI/app/topNavigation/Search"
 
 import Home from "../appUI/app/bottomNavigation/Home";
 import Budget from "../appUI/app/bottomNavigation/Budget";
@@ -27,4 +30,6 @@ export {
   Bursary,
   Freelance,
   Quiz,
+  Notifications,
+  Search
 };

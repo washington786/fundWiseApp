@@ -5,6 +5,7 @@ import RoundImage from '../../../components/RoundImage';
 import { useState } from 'react';
 import appThemeColors from '../../../utils/Colors';
 import { useNavigation } from '@react-navigation/core';
+import TopNavigation from '../../../components/app/TopNavigation';
 
 const Profile = () => {
   const navigation = useNavigation()
@@ -61,7 +62,7 @@ const Profile = () => {
   return (
     <View style={styles.container}>
       {/* top navigation */}
-      {/* <TopNavigation /> */}
+      <TopNavigation />
 
       {/* Round Image at the top center */}
       <RoundImage source={getProfilePhoto()} size={100} style={styles.roundImage} />
@@ -126,7 +127,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: appThemeColors['wild-sand']['200'],
     alignItems: 'center',
-    paddingTop: 40,
+    paddingTop: 0,
     fontFamily: 'inter'
   },
   roundImage: {

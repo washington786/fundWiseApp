@@ -1,7 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { CreateProfile, ForgotPassword, Login, OneTimePin, Register, ResetPassword, Walkthrough, Profile } from "../utils/exports";
+import { CreateProfile, ForgotPassword, Login, OneTimePin, Register, ResetPassword, Walkthrough, Profile, Notifications, Search } from "../utils/exports";
 
 const authStack = createNativeStackNavigator();
 export default function Auth() {
@@ -15,6 +15,10 @@ export default function Auth() {
       <authStack.Screen name="createProfile" component={CreateProfile} />
       <authStack.Screen name="oneTimePin" component={OneTimePin} />
       <authStack.Screen name="forgotPassword" component={ForgotPassword} />
+
+      <authStack.Screen name="profile" component={Profile} />
+      <authStack.Screen name="notifications" component={Notifications} />
+      <authStack.Screen name="search" component={Search} />
     </authStack.Navigator>
   );
 }

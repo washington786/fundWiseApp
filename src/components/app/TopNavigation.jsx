@@ -9,9 +9,15 @@ const TopNavigation = ({ isHome }) => {
   function handleBack() {
     navigation.goBack();
   }
-  function handleSearch() {}
-  function handleAccount() {}
-  function handleNotifications() {}
+  function handleSearch() {
+    navigation.navigate('search')
+  }
+  function handleAccount() {
+    navigation.navigate('profile')
+  }
+  function handleNotifications() {
+    navigation.navigate('notifications')
+  }
   return (
     <View style={styles.con}>
       {isHome && (
