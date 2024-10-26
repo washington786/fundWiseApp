@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
   },
   signUpText: {
     fontSize: 15,
-    color: '#06AFE2', // Different color for "Sign Up"
+    color: '#06AFE2', 
     fontWeight: '500',
   },
 })
