@@ -3,21 +3,24 @@ import React, { useState } from 'react'
 import MainButton from '../../components/MainButton';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { useNavigation } from '@react-navigation/core';
+import appThemeColors from '../../utils/Colors';
 
 const Login = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
 
   const handleLogin = () => {
     Alert.alert('Login data stored!', `Email: ${email}`);
+    // navigation.navigate('home')
   };
   const handleForgotPassword = () => {
-    alert('Forgot Password pressed');
+    navigation.navigate('forgotPassword')
   };
   const handleSignUp = () => {
-    alert('Navigate to Sign Up');
-    // navigation.navigate('SignUp');
+    navigation.navigate('register');
   };
 
   return (
@@ -91,7 +94,7 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
     paddingTop: 100,
     alignItems: 'center',
-    backgroundColor: '#E5E5EA',
+    backgroundColor: appThemeColors["wild-sand"]["200"],
     padding: 16,
   },
   logoContainer: {
@@ -119,14 +122,14 @@ const styles = StyleSheet.create({
     padding: 10,
     marginVertical: 10,
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: appThemeColors["black"]["100"],
     borderRadius: 25,
     backgroundColor: '#fff',
   },
   input: {
     flex: 1,
     fontSize: 16,
-    color: '#333',
+    color: appThemeColors["black"]["900"],
   },
   forgotPasswordContainer: {
     alignSelf: 'flex-end',
@@ -135,7 +138,7 @@ const styles = StyleSheet.create({
   },
   forgotPasswordText: {
     fontSize: 15,
-    color: '#06AFE2',
+    color: appThemeColors["cerulean"]["500"],
     fontWeight: '500',
   },
   customButton: {
@@ -151,7 +154,7 @@ const styles = StyleSheet.create({
   },
   signUpText: {
     fontSize: 15,
-    color: '#06AFE2', 
+    color: appThemeColors["cerulean"]["500"], 
     fontWeight: '500',
   },
 })

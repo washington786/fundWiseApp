@@ -1,4 +1,5 @@
 import { StyleSheet, TouchableOpacity, Text } from 'react-native';
+import appThemeColors from '../utils/Colors';
 import React from 'react';
 
 const MainButton = ({ title, onPress, customStyles }) => {
@@ -13,7 +14,7 @@ export default MainButton;
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: '#06AFE2',
+        backgroundColor: appThemeColors["cerulean"]["500"],
         paddingVertical: 12,
         paddingHorizontal: 25,
         borderRadius: 25,

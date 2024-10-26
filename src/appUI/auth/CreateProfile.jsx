@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, Image, Scro
 import React, { useState } from 'react';
 import MainButton from '../../components/MainButton';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-
+import appThemeColors from '../../utils/Colors';
 
 const CreateProfile = () => {
   const [universityName, setUniversityName] = useState('');
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: 50,
     alignItems: 'center',
-    backgroundColor: '#E5E5EA',
+    backgroundColor: appThemeColors["wild-sand"]["200"],
     padding: 16,
   },
   logoContainer: {
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 50,
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: appThemeColors["black"]["900"],
     borderRadius: 25,
     paddingLeft: 10,
     marginVertical: 10,
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
     flex: 2,
     height: 50,
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: appThemeColors["black"]["100"],
     borderRadius: 25,
     paddingLeft: 10,
     backgroundColor: '#fff',
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 50,
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: appThemeColors["black"]["100"],
     borderRadius: 25,
     paddingLeft: 10,
     backgroundColor: '#fff',
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#06AFE2',
+    backgroundColor: appThemeColors["cerulean"]["500"],
     borderRadius: 25,
     width: 50,
   },
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
     width: '100%',
     padding: 10,
     borderBottomWidth: 1,
-    borderColor: '#ddd',
+    borderColor: appThemeColors["black"]["100"],
   },
   listText: {
     fontSize: 16,

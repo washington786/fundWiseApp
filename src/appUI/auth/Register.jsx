@@ -3,8 +3,11 @@ import React, { useState } from 'react';
 import MainButton from '../../components/MainButton';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { useNavigation } from '@react-navigation/core';
+import appThemeColors from '../../utils/Colors';
 
 const Register = () => {
+  const navigation = useNavigation();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [dob, setDob] = useState('');
@@ -18,8 +21,7 @@ const Register = () => {
   };
 
   const handleSignIn = () => {
-    alert('Navigate to Sign In');
-    // navigation.navigate('Login'); // Uncomment this line if using navigation
+    navigation.navigate('login'); // Uncomment this line if using navigation
   };
 
   return (
@@ -147,9 +149,9 @@ export default Register;
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    paddingTop: 10,
+    paddingTop: 0,
     alignItems: 'center',
-    backgroundColor: '#E5E5EA',
+    backgroundColor: appThemeColors["wild-sand"]["200"],
     padding: 16,
   },
   logoContainer: {
@@ -177,14 +179,14 @@ const styles = StyleSheet.create({
     padding: 10,
     marginVertical: 5,
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: appThemeColors["black"]["100"],
     borderRadius: 25,
     backgroundColor: '#fff',
   },
   input: {
     flex: 1,
     fontSize: 16,
-    color: '#333',
+    color: appThemeColors["black"]["900"],
   },
   customButton: {
     margin: 5,
@@ -199,7 +201,7 @@ const styles = StyleSheet.create({
   },
   signInText: {
     fontSize: 15,
-    color: '#06AFE2', // Different color for "Sign In"
+    color: appThemeColors["cerulean"]["500"], // Different color for "Sign In"
     fontWeight: '500',
   },
 });

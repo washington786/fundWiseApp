@@ -1,14 +1,14 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { CreateProfile, ForgotPassword, Login, OneTimePin, Register, ResetPassword, Walkthrough } from "../utils/exports";
+import { CreateProfile, ForgotPassword, Login, OneTimePin, Register, ResetPassword, Walkthrough, Profile } from "../utils/exports";
 
 const authStack = createNativeStackNavigator();
 export default function Auth() {
   return (
     <authStack.Navigator screenOptions={{ headerShown: false }}
     initialRouteName="splash">
-      <authStack.Screen name="splash" component={Walkthrough} />
+      <authStack.Screen name="splash" component={Profile} />
       <authStack.Screen name="login" component={Login} />
       <authStack.Screen name="register" component={Register} />
       <authStack.Screen name="resetPassword" component={ResetPassword} />

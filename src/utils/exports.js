@@ -5,6 +5,7 @@ import ResetPassword from "../appUI/auth/ResetPassword";
 import CreateProfile from "../appUI/auth/CreateProfile";
 import OneTimePin from "../appUI/auth/OneTimePin";
 import ForgotPassword from "../appUI/auth/ForgotPassword";
+import Profile from "../appUI/app/topNavigation/Profile";
 
 export {
   Walkthrough,
@@ -14,4 +15,5 @@ export {
   CreateProfile,
   OneTimePin,
   ForgotPassword,
+  Profile
 };

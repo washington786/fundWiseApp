@@ -3,8 +3,11 @@ import React, { useState } from 'react';
 import MainButton from '../../components/MainButton';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { useNavigation } from '@react-navigation/core';
+import appThemeColors from '../../utils/Colors';
 
 const ResetPassword = () => {
+  const navigation = useNavigation();
   const [verificationPin, setVerificationPin] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -14,7 +17,8 @@ const ResetPassword = () => {
       Alert.alert('Error', 'Passwords do not match');
       return;
     }
-    Alert.alert('Reset Password', `Verification Pin: ${verificationPin}\nNew Password: ${newPassword}`);
+    Alert.alert('Reset Password Successful');
+    navigation.navigate('login')
   };
 
   return (
@@ -86,7 +90,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     paddingTop: 50,
     alignItems: 'center',
-    backgroundColor: '#E5E5EA',
+    backgroundColor: appThemeColors["wild-sand"][100],
     padding: 16,
   },
   logoContainer: {
@@ -114,14 +118,14 @@ const styles = StyleSheet.create({
     padding: 10,
     marginVertical: 10,
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: appThemeColors["black"]["100"],
     borderRadius: 25,
     backgroundColor: '#fff',
   },
   input: {
     flex: 1,
     fontSize: 16,
-    color: '#333',
+    color: appThemeColors["black"]["900"],
   },
   customButton: {
     margin: 5,
