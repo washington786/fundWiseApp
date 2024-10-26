@@ -7,6 +7,12 @@ import OneTimePin from "../appUI/auth/OneTimePin";
 import ForgotPassword from "../appUI/auth/ForgotPassword";
 import Profile from "../appUI/app/topNavigation/Profile";
 
+import Home from "../appUI/app/bottomNavigation/Home";
+import Budget from "../appUI/app/bottomNavigation/Budget";
+import Bursary from "../appUI/app/bottomNavigation/Bursary";
+import Freelance from "../appUI/app/bottomNavigation/Freelance";
+import Quiz from "../appUI/app/bottomNavigation/Quiz";
+
 export {
   Walkthrough,
   Login,
@@ -15,5 +21,10 @@ export {
   CreateProfile,
   OneTimePin,
   ForgotPassword,
-  Profile
+  Profile,
+  Home,
+  Budget,
+  Bursary,
+  Freelance,
+  Quiz,
 };

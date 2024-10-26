@@ -1,11 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import Scroller from '../../../components/Scroller'
+import TopNavigation from '../../../components/app/TopNavigation'
 
 const Budget = () => {
   return (
-    <View>
-      <Text>Budget</Text>
-    </View>
+    <Scroller>
+      <TopNavigation isHome={false}/>
+    </Scroller>
   )
 }
 
