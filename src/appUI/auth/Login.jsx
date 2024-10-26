@@ -1,7 +1,8 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, Image } from 'react-native'
-import React, { useState} from 'react'
-import MainButton from '../components/MainButton';
+import React, { useState } from 'react'
+import MainButton from '../../components/MainButton';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -12,7 +13,7 @@ const Login = () => {
     Alert.alert('Login data stored!', `Email: ${email}`);
   };
   const handleForgotPassword = () => {
-    alert('Forgot Password pressed'); 
+    alert('Forgot Password pressed');
   };
   const handleSignUp = () => {
     alert('Navigate to Sign Up');
@@ -20,7 +21,11 @@ const Login = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <KeyboardAwareScrollView
+      contentContainerStyle={styles.container}
+      resetScrollToCoords={{ x: 0, y: 0 }}
+      scrollEnabled={true}
+    >
 
       {/* Logo */}
       <View style={styles.logoContainer}>
@@ -63,7 +68,7 @@ const Login = () => {
       <TouchableOpacity onPress={handleForgotPassword} style={styles.forgotPasswordContainer}>
         <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
       </TouchableOpacity>
-      
+
       {/* SignIn Button */}
       <MainButton title="Login" onPress={handleLogin} customStyles={styles.customButton} />
 
@@ -74,7 +79,7 @@ const Login = () => {
           <Text style={styles.signUpText}>Sign Up</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </KeyboardAwareScrollView>
   )
 }
 
@@ -82,7 +87,7 @@ export default Login
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     // justifyContent: 'center',
     paddingTop: 100,
     alignItems: 'center',
@@ -124,13 +129,13 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   forgotPasswordContainer: {
-    alignSelf: 'flex-end', 
+    alignSelf: 'flex-end',
     marginBottom: 10,
-    marginRight: '10%', 
+    marginRight: '10%',
   },
   forgotPasswordText: {
     fontSize: 15,
-    color: '#06AFE2', 
+    color: '#06AFE2',
     fontWeight: '500',
   },
   customButton: {
