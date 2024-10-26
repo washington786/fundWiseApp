@@ -122,7 +122,8 @@ export default CreateProfile;
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 50,
+    flexGrow:1,
+    paddingTop: 10,
     alignItems: 'center',
     backgroundColor: appThemeColors["wild-sand"]["200"],
     padding: 16,
@@ -130,7 +131,6 @@ const styles = StyleSheet.create({
   logoContainer: {
     width: 216,
     height: 216,
-    marginBottom: 20,
   },
   logoImg: {
     width: '100%',
@@ -140,17 +140,18 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'inter',
     fontWeight: '700',
-    marginBottom: 20,
+    marginBottom: 10,
   },
   input: {
     width: '100%',
     height: 50,
     borderWidth: 1,
-    borderColor: appThemeColors["black"]["900"],
+    borderColor: appThemeColors["black"]["100"],
     borderRadius: 25,
     paddingLeft: 10,
     marginVertical: 10,
     backgroundColor: '#fff',
+    color: appThemeColors['black']['500']
   },
   subjectContainer: {
     flexDirection: 'row',
@@ -167,6 +168,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     backgroundColor: '#fff',
     marginRight: 10,
+    color: appThemeColors['black']['500']
   },
   markInput: {
     flex: 1,
@@ -198,18 +200,22 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: '100%',
-    padding: 10,
-    borderBottomWidth: 1,
-    borderColor: appThemeColors["black"]["100"],
+    width: '60%',
+    height:30,
+    paddingHorizontal: 12,
+    backgroundColor: '#fff',
+    borderRadius: 25,
+    marginBottom:10
   },
   listText: {
     fontSize: 16,
     flex: 1,
+    color: appThemeColors['black']['500']
   },
   deleteButton: {
-    color: '#FF0000',
-    fontSize: 20,
+    color: appThemeColors["cerulean"]["500"],
+    fontSize: 15,
+    fontWeight:'500',
   },
   customButton: {
     margin: 5,
