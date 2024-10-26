@@ -8,7 +8,7 @@ export default function Auth() {
   return (
     <authStack.Navigator screenOptions={{ headerShown: false }}
     initialRouteName="splash">
-      <authStack.Screen name="splash" component={Profile} />
+      <authStack.Screen name="splash" component={Walkthrough} />
       <authStack.Screen name="login" component={Login} />
       <authStack.Screen name="register" component={Register} />
       <authStack.Screen name="resetPassword" component={ResetPassword} />

@@ -1,26 +1,41 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, Image } from 'react-native'
-import React, { useState } from 'react'
-import MainButton from '../../components/MainButton';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { useNavigation } from '@react-navigation/core';
-import appThemeColors from '../../utils/Colors';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+  Alert,
+  Image,
+} from "react-native";
+
+import React, { useState } from "react";
+
+import MainButton from "../../components/MainButton";
+
+import Icon from "react-native-vector-icons/MaterialIcons";
+
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+
+import { useNavigation } from "@react-navigation/core";
+
+import appThemeColors from "../../utils/Colors";
 
 const Login = () => {
   const navigation = useNavigation();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    Alert.alert('Login data stored!', `Email: ${email}`);
-    // navigation.navigate('home')
+    // Alert.alert('Login data stored!', `Email: ${email}`);
+    navigation.navigate("app");
   };
+
   const handleForgotPassword = () => {
-    navigation.navigate('forgotPassword')
+    navigation.navigate("forgotPassword");
   };
+
   const handleSignUp = () => {
-    navigation.navigate('register');
+    navigation.navigate("register");
   };
 
   return (
@@ -29,12 +44,11 @@ const Login = () => {
       resetScrollToCoords={{ x: 0, y: 0 }}
       scrollEnabled={true}
     >
-
       {/* Logo */}
       <View style={styles.logoContainer}>
         <Image
           style={styles.logoImg}
-          source={require('../../../assets/logo.png')}
+          source={require("../../../assets/logo.png")}
         />
       </View>
 
@@ -68,12 +82,19 @@ const Login = () => {
       </View>
 
       {/* Forgot Password Link */}
-      <TouchableOpacity onPress={handleForgotPassword} style={styles.forgotPasswordContainer}>
+      <TouchableOpacity
+        onPress={handleForgotPassword}
+        style={styles.forgotPasswordContainer}
+      >
         <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
       </TouchableOpacity>
 
       {/* SignIn Button */}
-      <MainButton title="Login" onPress={handleLogin} customStyles={styles.customButton} />
+      <MainButton
+        title="Login"
+        onPress={handleLogin}
+        customStyles={styles.customButton}
+      />
 
       {/* SignUp text */}
       <View style={styles.signUpContainer}>
@@ -83,40 +104,40 @@ const Login = () => {
         </TouchableOpacity>
       </View>
     </KeyboardAwareScrollView>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
 
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     // justifyContent: 'center',
     paddingTop: 100,
-    alignItems: 'center',
+    alignItems: "center",
     backgroundColor: appThemeColors["wild-sand"]["200"],
     padding: 16,
   },
   logoContainer: {
     width: 216,
-    height: 216
+    height: 216,
   },
   logoImg: {
-    width: '100%',
-    height: '100%'
+    width: "100%",
+    height: "100%",
   },
   title: {
     fontSize: 20,
-    fontFamily: 'inter',
-    fontWeight: '700',
+    fontFamily: "inter",
+    fontWeight: "700",
     marginBottom: 20,
   },
   icon: {
     marginRight: 10,
   },
   inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     width: 350,
     height: 50,
     padding: 10,
@@ -124,7 +145,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: appThemeColors["black"]["100"],
     borderRadius: 25,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
   },
   input: {
     flex: 1,
@@ -132,29 +153,29 @@ const styles = StyleSheet.create({
     color: appThemeColors["black"]["900"],
   },
   forgotPasswordContainer: {
-    alignSelf: 'flex-end',
+    alignSelf: "flex-end",
     marginBottom: 10,
-    marginRight: '10%',
+    marginRight: "10%",
   },
   forgotPasswordText: {
     fontSize: 15,
     color: appThemeColors["cerulean"]["500"],
-    fontWeight: '500',
+    fontWeight: "500",
   },
   customButton: {
-    margin: 5
+    margin: 5,
   },
   signUpContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
     marginTop: 10,
   },
   text: {
     fontSize: 15,
-    fontWeight: '500'
+    fontWeight: "500",
   },
   signUpText: {
     fontSize: 15,
-    color: appThemeColors["cerulean"]["500"], 
-    fontWeight: '500',
+    color: appThemeColors["cerulean"]["500"],
+    fontWeight: "500",
   },
-})
+});

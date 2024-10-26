@@ -17,7 +17,8 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleCreateAccount = () => {
-    Alert.alert('Account Created!', `Email: ${email}\nFirst Name: ${firstName}`);
+    navigation.navigate('app')
+    // Alert.alert('Account Created!', `Email: ${email}\nFirst Name: ${firstName}`);
   };
 
   const handleSignIn = () => {
