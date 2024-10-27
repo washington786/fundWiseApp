@@ -11,6 +11,6 @@ export default MainWrapper;
 const styles = StyleSheet.create({
   con: {
     flex: 1,
-    backgroundColor: appThemeColors["wild-sand"][100],
+    backgroundColor: appThemeColors["cerulean"][100],
   },
 });

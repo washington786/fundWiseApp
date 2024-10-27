@@ -2,6 +2,8 @@ import { StyleSheet, View } from "react-native";
 import React from "react";
 import { Card, IconButton, Text } from "react-native-paper";
 
+import Ant from "react-native-vector-icons/AntDesign";
+
 const EarnCard = () => {
   return (
     <Card
@@ -19,12 +21,18 @@ const EarnCard = () => {
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <IconButton icon={"credit-card-chip"} size={30} iconColor="#ffffff" />
           <Text variant="bodyLarge" style={{ color: "#ffffff" }}>
-            20000.00
+            R20000.00
           </Text>
         </View>
         <View style={styles.con}>
-          <Text style={styles.texts}>Earned</Text>
-          <Text style={styles.texts}>Spend</Text>
+          <Text style={styles.texts}>
+            Earned <Text style={styles.texts}>+R350.00</Text>{" "}
+            <Ant name="arrowup" size={20} color={"#3EFE3E"} />
+          </Text>
+          <Text style={styles.texts}>
+            Spend <Text style={styles.texts}>-R300.00</Text>{" "}
+            <Ant name="arrowdown" size={20} color={"#FE4E3E"} />
+          </Text>
         </View>
       </Card.Content>
     </Card>
@@ -39,6 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "row",
     width: "100%",
+    marginVertical: 5,
   },
   texts: {
     color: "#ffffff",

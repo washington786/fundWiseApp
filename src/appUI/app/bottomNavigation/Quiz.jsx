@@ -1,16 +1,23 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import Scroller from '../../../components/Scroller'
-import TopNavigation from '../../../components/app/TopNavigation'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import Scroller from "../../../components/Scroller";
+import TopNavigation from "../../../components/app/TopNavigation";
 
 const Quiz = () => {
   return (
-    <Scroller>
-      <TopNavigation isHome={false}/>
-    </Scroller>
-  )
-}
+    <View style={{ backgroundColor: "#ffffff", flex: 1 }}>
+      <TopNavigation isHome={false} />
+      <Scroller>
+        <View style={styles.con}></View>
+      </Scroller>
+    </View>
+  );
+};
 
-export default Quiz
+export default Quiz;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  con: {
+    paddingHorizontal: 10,
+  },
+});
