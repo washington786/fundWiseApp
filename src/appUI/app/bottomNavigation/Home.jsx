@@ -6,13 +6,15 @@ import TopNavigation from "../../../components/app/TopNavigation";
 import EarnCard from "../../../components/app/EarnCard";
 import RecentTransactions from "../../../components/app/RecentTransactions";
 import ChartGraph from "../../../components/app/ChartGraph";
+import Carousel from "../../../components/app/Carousel";
+// import Carousel from "../../../components/app/Carousel";
 
 const Home = () => {
   return (
     <Scroller>
       <TopNavigation isHome={false} />
       <View style={styles.con}>
-        {/* <Carousel /> */}
+        <Carousel />
         <EarnCard/>
         <ChartGraph/>
         <RecentTransactions/>
