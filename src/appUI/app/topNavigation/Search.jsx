@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TextInput, FlatList, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import RoundImage from '../../../components/RoundImage';
 import MainButton from '../../../components/MainButton';
+import appThemeColors from '../../../utils/Colors';
 
 const Search = () => {
   const [query, setQuery] = useState('');
@@ -36,19 +37,35 @@ const Search = () => {
     );
     setResults(filteredResults);
   };
+  useEffect(() => {
+    handleSearch();
+  }, []);
 
   const renderResult = ({ item }) => (
     <View style={styles.resultContainer}>
-      <Icon name="bookmark-border" size={20} color="#06AFE2" style={styles.bookmarkIcon} />
-      <RoundImage source={item.profilePhoto} size={50} />
-      <View style={styles.textContainer}>
-        <Text style={styles.resultTitle}>{item.title}</Text>
-        <Text style={styles.organization}>{item.organisation}</Text>
-        <Text style={styles.date}>{item.datePosted}</Text>
-      </View>
-      <TouchableOpacity style={styles.applyButton}>
-        <Text style={styles.applyButtonText}>Apply</Text>
+      <TouchableOpacity style={styles.bookmarkIcon}>
+        <Icon name="bookmark-border" size={20} color="#06AFE2"  />
       </TouchableOpacity>
+      <View style={styles.topView}>
+        <RoundImage source={item.profilePhoto} size={50} />
+        <View style={styles.textContainer}>
+          <Text style={styles.resultTitle}>{item.title}</Text>
+          <Text style={styles.organization}>{item.organisation}</Text>
+          <Text style={styles.date}>{item.datePosted}</Text>
+        </View>
+      </View>
+
+
+      <View style={styles.bottomView}>
+        <View style={styles.requirementsContainer}>
+          <View style={styles.requirement}><Text style={styles.text}>test</Text></View>
+          <View style={styles.requirement}><Text style={styles.text}>test</Text></View>
+          <View style={styles.requirement}><Text style={styles.text}>test</Text></View>
+        </View>
+        <TouchableOpacity style={styles.applyButton}>
+          <Text style={styles.applyButtonText}>Apply</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 
@@ -60,9 +77,9 @@ const Search = () => {
           placeholder="Search"
           value={query}
           onChangeText={setQuery}
-          // onChange={handleSearch}
+        // onChange={handleSearch}
         />
-        <TouchableOpacity onPress ={handleSearch}>
+        <TouchableOpacity onPress={handleSearch}>
           <Icon name="search" size={24} color="#888" style={styles.searchIcon} />
         </TouchableOpacity>
 
@@ -88,13 +105,13 @@ export default Search;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E5E5EA',
+    backgroundColor: appThemeColors['wild-sand']['200'],
     padding: 16,
   },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: '90%',
+    width: '98%',
     height: 50,
     backgroundColor: '#FFFFFF',
     borderRadius: 25,
@@ -105,7 +122,8 @@ const styles = StyleSheet.create({
   searchInput: {
     flex: 1,
     fontSize: 16,
-    color: '#333',
+    fontWeight: '500',
+    color: appThemeColors['black']['600'],
   },
   searchIcon: {
     marginLeft: 8,
@@ -114,7 +132,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: '90%',
+    width: '95%',
     alignSelf: 'center',
     marginBottom: 10,
   },
@@ -129,23 +147,50 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   resultContainer: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems: 'center',
-    width: '90%',
+    width: '98%',
     padding: 10,
     marginVertical: 5,
     backgroundColor: '#FFFFFF',
     borderRadius: 10,
-    elevation: 2,
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowRadius: 1,
-    shadowOffset: { width: 0, height: 1 },
+  },
+  topView: {
+    flexDirection: 'row',
+    marginTop: 5,
+    marginBottom: 20
+  },
+  bottomView: {
+    flexDirection: 'row',
+    marginBottom: 5
+  },
+  requirementsContainer: {
+    flex: 1,
+    marginLeft: 10,
+    width: '50%',
+    flexDirection: 'row',
+  },
+  requirement: {
+    marginRight: 10,
+    backgroundColor: appThemeColors['wild-sand']['200'],
+    // paddingTop:3,
+    justifyContent: 'center',
+    paddingHorizontal: 10,
+    textAlign: 'center',
+    borderRadius: 5,
+
+  },
+  text: {
+    color: appThemeColors['black']['500'],
+    fontWeight: '500'
   },
   bookmarkIcon: {
     position: 'absolute',
-    top: 5,
-    left: 5,
+    padding: 5,
+    borderRadius: 5,
+    top: 20,
+    right: 10,
+    backgroundColor: appThemeColors['wild-sand']['200']
   },
   textContainer: {
     flex: 1,
@@ -158,17 +203,18 @@ const styles = StyleSheet.create({
   },
   organization: {
     fontSize: 12,
-    color: '#888',
+    color: appThemeColors['black']['500'],
   },
   date: {
     fontSize: 10,
-    color: '#888',
+    color: appThemeColors['black']['500'],
   },
   applyButton: {
-    backgroundColor: '#06AFE2',
+    backgroundColor: appThemeColors['cerulean']['500'],
     paddingHorizontal: 10,
     paddingVertical: 5,
     borderRadius: 5,
+    marginLeft: 30
   },
   applyButtonText: {
     fontSize: 12,
