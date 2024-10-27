@@ -6,6 +6,9 @@ import { Button, Card, Text } from "react-native-paper";
 
 import EvilIcons from "react-native-vector-icons/EvilIcons";
 import appThemeColors from "../../../utils/Colors";
+import BottomSheet from "../../../components/app/BottomSheet";
+import BottomSheetComponent from "../../../components/app/BottomSheet";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 const Quiz = () => {
   return (
@@ -73,6 +76,9 @@ const Quiz = () => {
               Play
             </Button>
           </View>
+          <GestureHandlerRootView style={{ flex: 1 }}>
+            <BottomSheetComponent />
+          </GestureHandlerRootView>
         </View>
       </Scroller>
     </View>
@@ -96,6 +102,6 @@ const styles = StyleSheet.create({
   },
   btn: {
     width: "50%",
-    marginTop:10
+    marginTop: 10,
   },
 });
