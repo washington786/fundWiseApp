@@ -30,6 +30,7 @@ const Register = () => {
     contentContainerStyle={styles.container}
     resetScrollToCoords={{ x: 0, y: 0 }}
     scrollEnabled={true}
+    style={{ backgroundColor:'#fff' }}
   >
 
       {/* Logo */}
@@ -152,7 +153,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     paddingTop: 0,
     alignItems: 'center',
-    backgroundColor: appThemeColors["wild-sand"]["200"],
+    backgroundColor: '#ffffff',
     padding: 16,
   },
   logoContainer: {
