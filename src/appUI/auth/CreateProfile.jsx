@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     flexGrow:1,
     paddingTop: 10,
     alignItems: 'center',
-    backgroundColor: appThemeColors["wild-sand"]["200"],
+    backgroundColor: '#ffffff',
     padding: 16,
   },
   logoContainer: {

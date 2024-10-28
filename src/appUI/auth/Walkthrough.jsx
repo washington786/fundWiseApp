@@ -29,7 +29,7 @@ const Walkthrough = () => {
             similique sit!
           </Text>
         </View>
-        <Button mode="contained-tonal" uppercase onPress={handleGetStarted}>
+        <Button mode="contained-tonal" uppercase onPress={handleGetStarted} buttonColor="#fff">
           Get Started
         </Button>
       </View>

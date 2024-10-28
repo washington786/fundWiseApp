@@ -43,6 +43,7 @@ const Login = () => {
       contentContainerStyle={styles.container}
       resetScrollToCoords={{ x: 0, y: 0 }}
       scrollEnabled={true}
+      
     >
       {/* Logo */}
       <View style={styles.logoContainer}>
@@ -115,7 +116,7 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
     paddingTop: 100,
     alignItems: "center",
-    backgroundColor: appThemeColors["wild-sand"]["200"],
+    backgroundColor: '#ffffff',
     padding: 16,
   },
   logoContainer: {

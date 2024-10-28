@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import TopNavigation from '../../../components/app/TopNavigation';
+import GoBack from '../../../components/app/GoBack';
 
 const Notifications = () => {
   const notifications = [
@@ -22,6 +23,7 @@ const Notifications = () => {
 
   return (
     <View style={styles.container}>
+      <GoBack/>
       <TopNavigation />
       <Text style={styles.title}>Notifications</Text>
       <FlatList
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 0,
     paddingHorizontal: 16,
-    backgroundColor: '#E5E5EA',
+    backgroundColor: '#ffffff',
   },
   title: {
     fontSize: 24,
