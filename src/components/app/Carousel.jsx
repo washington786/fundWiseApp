@@ -40,19 +40,9 @@ const Carousel = () => {
 export default Carousel;
 
 const styles = StyleSheet.create({
-  // container: {
-  //   height: "20%",
-  //   backgroundColor: "#ede",
-  //   marginVertical: 10,
-  // },
-  // pager: {
-  //   // height: "100%",
-  //   backgroundColor: "#ede",
-  //   // marginVertical: 10,
-  // },
   container: {
     // flex: 1,
-    height:'15%'
+    height: "15%",
   },
   pager: {
     flex: 1,

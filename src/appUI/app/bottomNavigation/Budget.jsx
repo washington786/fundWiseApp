@@ -1,16 +1,28 @@
 import { StyleSheet, View } from "react-native";
-import React from "react";
+import React, { useRef } from "react";
 import Scroller from "../../../components/Scroller";
 import TopNavigation from "../../../components/app/TopNavigation";
 import BudgetCard from "../../../components/app/BudgetCard";
-import { Button, Text } from "react-native-paper";
+import { Button, Text, TextInput } from "react-native-paper";
 import appThemeColors from "../../../utils/Colors";
 import OverViewCard from "../../../components/app/OverViewCard";
 import GoalsCard from "../../../components/app/GoalsCard";
+import BottomSheetComponent from "../../../components/app/BottomSheet";
+import { Picker } from "@react-native-picker/picker";
 
 const Budget = () => {
+  const incomeRef = useRef();
+  const expenseRef = useRef();
+
+  function handleIncomeBottom(btnType) {
+    incomeRef.current.open();
+  }
+  function handleExpenseBottom(btnType) {
+    incomeRef.current.open();
+  }
+
   return (
-    <View style={{ backgroundColor:'#ffffff',flex:1 }}>
+    <View style={{ backgroundColor: "#ffffff", flex: 1 }}>
       <TopNavigation isHome={false} />
       <Scroller>
         <View style={styles.con}>
@@ -20,7 +32,7 @@ const Budget = () => {
               style={styles.btns}
               icon="arrow-up"
               mode="contained"
-              onPress={() => console.log("Pressed")}
+              onPress={handleIncomeBottom}
             >
               Add income
             </Button>
@@ -28,7 +40,7 @@ const Budget = () => {
               style={styles.btns}
               icon="arrow-down"
               mode="contained"
-              onPress={() => console.log("Pressed")}
+              onPress={handleExpenseBottom}
             >
               Add Expense
             </Button>
@@ -75,6 +87,53 @@ const Budget = () => {
           </View>
           <GoalsCard />
         </View>
+        <BottomSheetComponent ref={incomeRef}>
+          <Text variant="titleMedium" style={styles.title}>
+            Add Income
+          </Text>
+          <Scroller>
+            <View>
+              <TextInput label="Title" />
+              <TextInput label="Amount" />
+              <TextInput label="Description" multiline={true} />
+              <Picker mode="dropdown">
+                <Picker.Item value={"1"} label="option1" />
+                <Picker.Item value={"2"} label="option2" />
+                <Picker.Item value={"3"} label="option2" />
+              </Picker>
+              <Picker mode="dropdown">
+                <Picker.Item value={"1"} label="option1" />
+                <Picker.Item value={"2"} label="option2" />
+                <Picker.Item value={"3"} label="option2" />
+              </Picker>
+              <Button mode="contained-tonal" buttonColor="#000" background={'#000'} textColor="#eee">Submit</Button>
+            </View>
+          </Scroller>
+        </BottomSheetComponent>
+        <BottomSheetComponent ref={expenseRef}>
+          <Text variant="titleMedium" style={styles.title}>
+            Add Expense
+          </Text>
+          <Scroller>
+            <View>
+              <TextInput label="Title" />
+              <TextInput label="Amount" />
+              <TextInput label="Description" multiline={true} />
+              <Picker mode="dropdown">
+                <Picker.Item value={"1"} label="option1" />
+                <Picker.Item value={"2"} label="option2" />
+                <Picker.Item value={"3"} label="option2" />
+              </Picker>
+              <Picker mode="dropdown">
+                <Picker.Item value={"1"} label="option1" />
+                <Picker.Item value={"2"} label="option2" />
+                <Picker.Item value={"3"} label="option2" />
+              </Picker>
+
+              <Button mode="contained-tonal" buttonColor="#000" background={'#000'} textColor="#eee">Submit</Button>
+            </View>
+          </Scroller>
+        </BottomSheetComponent>
       </Scroller>
     </View>
   );
